@@ -16,10 +16,10 @@
                             <div class="p-5">
                                 <div class="text-center">
                                     @if (session()->has('error'))
-                                <div class="alert alert-danger border-left-danger">
-                                    {{ session()->get('error') }} <i class="fas fa-exclamation-triangle"></i>
-                                </div>
-                            @endif
+                                        <div class="alert alert-danger border-left-danger">
+                                            {{ session()->get('error') }} <i class="fas fa-exclamation-triangle"></i>
+                                        </div>
+                                    @endif
                                     <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                 </div>
                                 <form class="user" method="POST" action="{{ route('login.custom') }}">

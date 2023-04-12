@@ -15,7 +15,7 @@
                         <div class="text-center">
                             @if (session()->has('success'))
                                 <div class="alert alert-success border-left-primary">
-                                    {{ session()->get('success') }} <i class="fas fa-user-check"></i><a class="small" href="{{ route('login') }}"> | Click here to login </a>
+                                    {{ session()->get('success') }} <i class="fas fa-user-check"></i> | <a class="small" href="{{ route('login') }}"> | Click here to login </a>
                                 </div>
                             @endif
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
