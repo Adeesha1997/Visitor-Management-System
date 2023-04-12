@@ -19,9 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('login' , [CustomAuthController::class, 'index'])->name('login');
-Route::post('login-custom', [CustomAuthController::class, 'custom_login'])->name('login.custom');
+Route::post('custom-login', [CustomAuthController::class, 'custom_login'])->name('login.custom');
 Route::get('dashboard', [CustomAuthController::class, 'dashboard'])->name('dashboard');
-Route::get('logout', [CustomerAuthController::class, 'logout'])->name('logout');
+Route::get('logout', [CustomAuthController::class, 'logout'])->name('logout');
 
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register');
 
