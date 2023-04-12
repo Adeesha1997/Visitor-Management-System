@@ -23,7 +23,7 @@
 
 </head>
 
-<body class="bg-gradient-danger">
+<body class="bg-gradient-light">
 
     <div class="container mt-3">
 
