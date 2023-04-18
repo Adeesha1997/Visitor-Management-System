@@ -10,15 +10,22 @@
     <meta name="author" content="">
 
     <title>@yield('title')</title>
+    <!-- Jquery & Datatable CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+     <!-- Custom fonts for this template -->
+     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+     <link
+         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+         rel="stylesheet">
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+     <!-- Custom styles for this template -->
+     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+     <!-- Custom styles for this page -->
+     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 
 </head>
 
@@ -54,25 +61,19 @@
 
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    Interface
+                    Modules
                 </div>
 
                 <!-- Nav Item - Pages Collapse Menu -->
+                @if(Auth::user()->type== 'Admin')
                 <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                        aria-expanded="true" aria-controls="collapseTwo">
-                        <i class="fas fa-fw fa-cog"></i>
-                        <span>Components</span>
+                    <a class="nav-link collapsed" href="{{route('sub.user')}}">
+                        <i class="fas fa-users"></i>
+                        <span>User</span>
                     </a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Custom Components:</h6>
-                            <a class="collapse-item" href="buttons.html">Buttons</a>
-                            <a class="collapse-item" href="cards.html">Cards</a>
-                        </div>
-                    </div>
-                </li>
 
+                </li>
+                @endif
                 <!-- Nav Item - Utilities Collapse Menu -->
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -164,7 +165,7 @@
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
-                    <div class="container-fluid">
+                    <div class="container">
 
 
 
@@ -220,23 +221,22 @@
     @endguest
 
 
+     <!-- Bootstrap core JavaScript-->
+     <script src="vendor/jquery/jquery.min.js"></script>
+     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+     <!-- Core plugin JavaScript-->
+     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+     <!-- Custom scripts for all pages-->
+     <script src="js/sb-admin-2.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+     <!-- Page level plugins -->
+     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+     <!-- Page level custom scripts -->
+     <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

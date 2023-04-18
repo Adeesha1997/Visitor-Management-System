@@ -1,9 +1,9 @@
 @extends('layouts.dashboard')
-@section('titile', 'Profile')
+@section('title', 'Profile')
 @section('heading', 'Profile')
 @section('content')
 
-    <div class="container">
+
         <div class="row">
 
             <div class="col-lg-12 mb-5 ">
@@ -80,7 +80,7 @@
                     <br>
 
 
-                    <button type="submit" class="btn btn-primary btn-icon-split" value="Edit">
+                    <button type="submit" class="btn btn-sm btn-primary btn-icon-split" value="Edit">
                         <span class="icon text-white-50">
                             <i class="fas fa-save"></i>
                         </span>
@@ -92,6 +92,6 @@
 
             </div>
         </div>
-    </div>
+
 
 @endsection

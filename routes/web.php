@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubUserController;
 
 
 /*
@@ -36,4 +37,13 @@ Route::post('custom-registration', [CustomAuthController::class, 'custom_registr
 Route::get('profile',[ProfileController::class,'index'])->name('profile');
 
 Route::post('profile-edit',[ProfileController::class, 'edit_validation'])->name('profile.edit_validation');
+
+
+Route::get('subUser',[SubUserController::class,'index'])->name('sub.user');
+
+Route::get('subUser-fetchall', [SubUserController::class, 'fetch_all'])->name('sub_user.fetchall');
+
+Route::get('subUser-add', [SubUserController::class, 'add'])->name('sub_user.add');
+
+Route::post('subUser-add_validation', [SubUserController::class, 'add_validation' ])->name('sub_user.add_validation');
 
