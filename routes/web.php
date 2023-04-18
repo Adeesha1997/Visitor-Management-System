@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubUserController;
+use App\Http\Controllers\DepartmentController;
 
 
 /*
@@ -52,4 +53,8 @@ Route::get('subUser-edit{id}',[SubUserController::class, 'edit'])->name('edit');
 Route::post('subUser-edit_validation', [SubUserController::class, 'edit_validation'] )->name('sub_user.edit_validation');
 
 Route::get('subUser-delete/{id}', [SubUserController::class, 'delete'])->name('delete');
+
+Route::get('department', [DepartmentController::class, 'index'])->name('department');
+
+Route::get('department-fetchall', [DepartmentController::class, 'fetchall'])->name('department.fetchall');
 
