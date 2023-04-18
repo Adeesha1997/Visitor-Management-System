@@ -50,3 +50,6 @@ Route::post('subUser-add_validation', [SubUserController::class, 'add_validation
 Route::get('subUser-edit{id}',[SubUserController::class, 'edit'])->name('edit');
 
 Route::post('subUser-edit_validation', [SubUserController::class, 'edit_validation'] )->name('sub_user.edit_validation');
+
+Route::get('subUser-delete/{id}', [SubUserController::class, 'delete'])->name('delete');
+

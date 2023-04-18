@@ -34,9 +34,7 @@ class SubUserController extends Controller
                     ->addColumn('action', function($row){
                         return '<center><a href="/subUser-edit'.$row->id.'" class="btn btn-success btn-sm btn-icon-split"> <span class="icon text-white-50">
                         <i class="fas fa-edit"></i>
-                    </span></a>&nbsp;<button type="button" class="btn btn-danger btn-sm btn-icon-split" data-id="'.$row->id.'"><span class="icon text-white-50">
-                    <i class="fas fa-trash-alt"></i>
-                </span></button></center>';
+                    </span></a>&nbsp;<button type="button" class="btn btn-danger btn-sm delete btn-icon-split"" data-id="'.$row->id.'"><span class="icon text-white-50"> <i class="fas fa-trash-alt"></i></span></button></center>';
                     })
                     ->rawColumns(['action'])
                     ->make(true);
@@ -115,6 +113,17 @@ function edit_validation(Request $request)
     return redirect('subUser')->with('success','User Data Updated');
 
 }
+
+function delete($id)
+{
+    $data = User::findOrFail($id);
+    $data->delete();
+    return redirect('subUser')->with('success','User Data Deleted ');
+
+}
+
+
+
 
 
 }
