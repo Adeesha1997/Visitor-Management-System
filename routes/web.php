@@ -58,3 +58,7 @@ Route::get('department', [DepartmentController::class, 'index'])->name('departme
 
 Route::get('department-fetchall', [DepartmentController::class, 'fetchall'])->name('department.fetchall');
 
+Route::get('department-add', [DepartmentController::class, 'add'])->name('department.add');
+
+Route::post('department-add_validation', [DepartmentController::class , 'add_validation'])->name('department.add_validation');
+

@@ -32,7 +32,14 @@
                 <div class="col col-md-6">
                     <h6 class="m-0 font-weight-bold text-primary">Department Management</h6>
                 </div>
-
+                <div class="col col-md-6 text-right">
+                    <a href="{{route('department.add')}}" class="btn btn-sm btn-primary btn-icon-split" value="Edit">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-plus-circle"></i>
+                        </span>
+                        <span class="text">Add New</span>
+                    </a>
+                </div>
             </div>
         </div>
         <div class="card-body">

@@ -39,6 +39,32 @@ function fetchall(Request $request)
     }
 }
 
+function add()
+{
+    return view('pages.department.add_department');
+
+}
+
+function add_validation(Request $request)
+{
+    $request->validate([
+        'department_name' => 'required',
+        'contact_person' => 'required'
+    ]);
+
+    $data = $request->all();
+
+    Department::create([
+        'department_name' => $data['department_name'],
+        'contact_person' => implode(",",$data['contact_person'])
+
+    ]);
+
+return redirect('department')->with('success', 'New Department Data Added');
+
+
+
+}
 
 
 }
