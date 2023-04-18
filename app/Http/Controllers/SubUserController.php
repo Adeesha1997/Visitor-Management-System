@@ -32,7 +32,7 @@ class SubUserController extends Controller
             return DataTables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
-                        return '<center><a href="/sub_user/edit/'.$row->id.'" class="btn btn-success btn-sm btn-icon-split"> <span class="icon text-white-50">
+                        return '<center><a href="/subUser-edit'.$row->id.'" class="btn btn-success btn-sm btn-icon-split"> <span class="icon text-white-50">
                         <i class="fas fa-edit"></i>
                     </span></a>&nbsp;<button type="button" class="btn btn-danger btn-sm btn-icon-split" data-id="'.$row->id.'"><span class="icon text-white-50">
                     <i class="fas fa-trash-alt"></i>
@@ -74,6 +74,47 @@ class SubUserController extends Controller
 
 
     }
+
+public function edit($id)
+{
+    $data = User::findOrFail($id);
+
+    return view('pages.sub_user.edit_sub_user', compact('data'));
+}
+
+function edit_validation(Request $request)
+{
+    $request->validate([
+        'first_name' => 'required',
+        'last_name' => 'required',
+        'email' => 'required|email'
+    ]);
+
+    $data = $request->all();
+
+    if(!empty($data['password']))
+    {
+        $form_data = array(
+            'first_name' => $data['first_name'],
+            'last_name' =>  $data['last_name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password'])
+        );
+    }
+    else
+    {
+        $form_data = array(
+            'first_name' => $data['first_name'],
+            'last_name' =>  $data['last_name'],
+            'email' => $data['email']
+        );
+    }
+
+    User::whereId($data['hidden_id'])->update($form_data);
+
+    return redirect('subUser')->with('success','User Data Updated');
+
+}
 
 
 }

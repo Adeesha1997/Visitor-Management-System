@@ -47,3 +47,6 @@ Route::get('subUser-add', [SubUserController::class, 'add'])->name('sub_user.add
 
 Route::post('subUser-add_validation', [SubUserController::class, 'add_validation' ])->name('sub_user.add_validation');
 
+Route::get('subUser-edit{id}',[SubUserController::class, 'edit'])->name('edit');
+
+Route::post('subUser-edit_validation', [SubUserController::class, 'edit_validation'] )->name('sub_user.edit_validation');
