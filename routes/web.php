@@ -62,3 +62,7 @@ Route::get('department-add', [DepartmentController::class, 'add'])->name('depart
 
 Route::post('department-add_validation', [DepartmentController::class , 'add_validation'])->name('department.add_validation');
 
+Route::get('department-edit{id}', [DepartmentController::class, 'edit'])->name('department.edit');
+
+Route::post('department-edit_validation' , [DepartmentController::class , 'edit_validation'])->name('department.edit_validation');
+

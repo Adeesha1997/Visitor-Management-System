@@ -56,15 +56,39 @@ function add_validation(Request $request)
 
     Department::create([
         'department_name' => $data['department_name'],
-        'contact_person' => implode(",",$data['contact_person'])
+        'contact_person' => implode(", ",$data['contact_person'])
 
     ]);
 
 return redirect('department')->with('success', 'New Department Data Added');
+}
 
+public function edit($id)
+{
+    $data = Department::findOrFail($id);
 
+    return view('pages.department.edit_department',compact('data'));
 
 }
 
+function edit_validation(Request $request)
+{
+    $request->validate([
+        'department_name' => 'required',
+        'contact_person' => 'required'
+    ]);
+
+    $data = $request->all();
+
+    $form_data = array(
+        'department_name' => $data['department_name'],
+        'contact_person' => implode(", ",$data['contact_person'])
+    );
+
+    Department::whereId($data['hidden_id'])->update($form_data);
+
+    return redirect('department')->with('success' , 'Department Data Updated');
+
+}
 
 }

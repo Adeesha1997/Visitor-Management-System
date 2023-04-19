@@ -49,7 +49,6 @@
                         <tr>
                             <th>Department Name</th>
                             <th>Contact Person</th>
-                            <th>Created At</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -74,10 +73,7 @@
                         data: 'contact_person',
                         name: 'contact_person'
                     },
-                    {
-                        data:'created_at',
-                        name:'created_at'
-                    },
+
                     {
                         data:'action',
                         name:'action',
