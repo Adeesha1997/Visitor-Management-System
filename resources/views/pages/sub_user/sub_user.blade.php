@@ -103,7 +103,7 @@ $(document).on('click', '.delete', function(){
 
     if(confirm("Are you sure you want to remove it ?"))
     {
-        window.location.href = "/subUser-delete/"+ id;
+        window.location.href = '/subUser-delete/'+ id;
     }
 });
 </script>

@@ -78,13 +78,21 @@
                         data:'action',
                         name:'action',
                         orderable:false
-                    }
+                }
+            ]
+        });
+    })
 
-                ]
 
+$(document).on('click', '.delete', function(){
+    var id= $(this).data('id');
 
+    if(confirm("Are you sure you want to remove it ?"))
+    {
+        window.location.href = '/department-delete/'+ id;
+    }
+    
+});
+</script>
 
-            })
-        })
-    </script>
 @endsection

@@ -91,4 +91,12 @@ function edit_validation(Request $request)
 
 }
 
+function delete($id)
+{
+    $data = Department::findOrFail($id);
+    $data->delete();
+    return redirect('department')->with('success','Department Data Deleted ');
+
+}
+
 }
