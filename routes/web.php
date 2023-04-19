@@ -5,7 +5,7 @@ use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubUserController;
 use App\Http\Controllers\DepartmentController;
-
+use App\Http\Controllers\VisitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,4 +67,9 @@ Route::get('department-edit{id}', [DepartmentController::class, 'edit'])->name('
 Route::post('department-edit_validation' , [DepartmentController::class , 'edit_validation'])->name('department.edit_validation');
 
 Route::get('department-delete/{id}', [DepartmentController::class, 'delete'])->name('department.delete');
+
+Route::get('visitor',[VisitorController::class,'index'])->name('visitor');
+
+Route::get('visitor-fetchall', [VisitorController::class, 'fetchall'])->name('visitor.fetchall');
+
 

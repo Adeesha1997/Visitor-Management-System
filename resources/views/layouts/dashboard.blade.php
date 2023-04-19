@@ -76,8 +76,16 @@
 
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="{{route('department')}}">
-                        <i class="fas fa-folder-open"></i>
+                        <i class="fas fa-th-large"></i>
                         <span>Department</span>
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="{{route('visitor')}}">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <span>Visitor</span>
                     </a>
 
                 </li>
