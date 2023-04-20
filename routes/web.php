@@ -72,4 +72,6 @@ Route::get('visitor',[VisitorController::class,'index'])->name('visitor');
 
 Route::get('visitor-fetchall', [VisitorController::class, 'fetchall'])->name('visitor.fetchall');
 
+Route::get('visitor-add', [VisitorController::class, 'add'])->name('visitor.add');
+
 

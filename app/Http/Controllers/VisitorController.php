@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Visitor;
 
+use App\Models\Department;
+
 use DataTables;
 
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +20,12 @@ class VisitorController extends Controller
     }
 
     function index(){
-        return view('pages.visitor.visitor');
+        //fetch department data
+        $departments['data'] = Departments::orderby('department_name','asc')
+        ->select('id','department_name')
+        ->get();
+
+        return view('pages.visitor.visitor')-with('departments', $departments);
     }
 
     function fetchall(Request $request)
@@ -64,7 +71,11 @@ class VisitorController extends Controller
     }
 
 
+    function add()
+    {
+        return view('pages.visitor.add_visitor');
 
+    }
 
 
 

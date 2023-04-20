@@ -20,7 +20,14 @@
 
 
         <div class="row">
-            <div class="col-lg-12 mb-5 ">
+
+            <div class="col-lg-12 mb-2 ">
+
+            <div class="text-left">
+
+                <h5>Edit Profile Details</h5>
+
+            </div>
             <div class="text-center">
                 @if (session()->has('success'))
                     <div class="alert alert-success border-left-primary">

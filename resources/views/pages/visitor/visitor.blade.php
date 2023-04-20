@@ -33,7 +33,7 @@
                     <h6 class="m-0 font-weight-bold text-primary">Visitor Management</h6>
                 </div>
                 <div class="col col-md-6 text-right">
-                    <a href="#" class="btn btn-sm btn-primary btn-icon-split" value="Edit">
+                    <a href="{{route('visitor.add')}}" class="btn btn-sm btn-primary btn-icon-split" value="Edit">
                         <span class="icon text-white-50">
                             <i class="fas fa-plus-circle"></i>
                         </span>
